@@ -33,8 +33,10 @@ public class Gaulois {
 	}
 
 	public static void main(String[] args) {
-		Gaulois Bernede = new Gaulois("Bernede", 6);
-		Bernede.parler("Je suis un Gaulois");
-		System.out.println(Bernede);
+		Gaulois Asterix = new Gaulois("Asterix", 8);
+		Romain Minus = new Romain("Minus",6);
+		Asterix.parler("Je suis un Gaulois");
+		Asterix.frapper(Minus);
+		System.out.println(Asterix);
 	}
 }
