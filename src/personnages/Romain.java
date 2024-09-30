@@ -5,8 +5,17 @@ public class Romain {
 	private int force;
 
 	public Romain(String nom, int force) {
+		assert isforcepositive(force);
 		this.nom = nom;
 		this.force = force;
+	}
+	
+	public boolean isforcepositive(int force){
+		if (force > 0) {
+			return true;
+		}
+		System.out.println("La Force du Romain ne peut être négative");
+		return false;
 	}
 
 	public String getNom() {
@@ -22,12 +31,15 @@ public class Romain {
 	}
 
 	public void recevoirCoup(int forceCoup) {
+		assert isforcepositive(force);
+		int force2 = force;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aie");
 		} else {
 			parler("J'abandonne...");
 		}
+		assert force-force2 < 0;
 	}
 
 	public static void main(String[] args) {
