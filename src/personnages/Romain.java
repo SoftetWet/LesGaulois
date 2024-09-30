@@ -14,7 +14,7 @@ public class Romain {
 	}
 
 	public boolean isforcepositive() {
-		return force>0;
+		return force > 0;
 	}
 
 	public String getNom() {
@@ -30,7 +30,7 @@ public class Romain {
 	}
 
 	public void recevoirCoup(int forceCoup) {
-		int force2 = force;
+		int forceInitiale = force;
 		force -= forceCoup;
 		assert isforcepositive();
 		if (force > 0) {
@@ -38,7 +38,7 @@ public class Romain {
 		} else {
 			parler("J'abandonne...");
 		}
-		assert force - force2 < 0;
+		assert force - forceInitiale < 0;
 	}
 
 	public void sEquiper(Equipement equipement) {
@@ -53,11 +53,8 @@ public class Romain {
 				ajouterEquipement(equipement);
 			}
 			break;
-		case 0:
-			ajouterEquipement(equipement);
-			break;
 		default:
-			System.out.println("Equipement Incorrecte");
+			ajouterEquipement(equipement);
 			break;
 		}
 	}
