@@ -4,7 +4,6 @@ import personnages.Druide;
 import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
-import personnages.Musee;
 
 public class Scenario {
 

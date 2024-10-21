@@ -53,7 +53,6 @@ public class Gaulois {
 	}
 
 	public void faireUneDonnation(Musee musee) {
-
 		System.out.println("Le gaulois " + nom + " : << Je donne au musse tous mes trophees :");
 		for (int i = 0; i < nbtrophees; i++) {
 			if (i == nbtrophees - 1) {
