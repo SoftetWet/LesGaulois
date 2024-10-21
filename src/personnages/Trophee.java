@@ -22,4 +22,8 @@ public class Trophee {
 	public String donnerNom() {
 		return gaulois.getNom();
 	}
+	
+	public String stringEquipement() {
+		return equipement.toString();
+	}
 }
