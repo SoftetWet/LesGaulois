@@ -36,7 +36,7 @@ public class Gaulois {
 
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		Equipement recompense[] = romain.recevoirCoup((force / 3) * effetPotion);
+		Equipement[] recompense = romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; recompense != null && i < recompense.length; i++, nbtrophees++) {
 			this.trophees[nbtrophees] = recompense[i];
 		}
@@ -55,14 +55,17 @@ public class Gaulois {
 	public void faireUneDonnation(Musee musee) {
 		System.out.println("Le gaulois " + nom + " : << Je donne au musse tous mes trophees :");
 		for (int i = 0; i < nbtrophees; i++) {
-			if (i == nbtrophees - 1) {
-				System.out.println("- " + trophees[i] + " >>");
+			if (trophees[i] == null) {
+				continue;
 			} else {
-				System.out.println("- " + trophees[i]);
+				if (i == nbtrophees - 1) {
+					System.out.println("- " + trophees[i] + " >>");
+				} else {
+					System.out.println("- " + trophees[i]);
+				}
+				musee.donnerTrophee(this, trophees[i]);
 			}
-			musee.donnerTrophee(this, trophees[i]);
 		}
-
 	}
 
 	public static void main(String[] args) {
